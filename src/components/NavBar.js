@@ -6,11 +6,12 @@ export default function NavBar() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/webshop/products/getcategories.php')
+    axios.get('http://localhost/webshop/products/getcategories.php')
       .then((response) => {
         console.log(response);
         const json = response.data;
         setCategories(json);
+
       }).catch (error => {
         if (error.response === undefined) {
           alert(error);
@@ -35,7 +36,7 @@ export default function NavBar() {
                 <li className='nav-item dropdown'>
                   <a className='nav-link dropdown-toggle' href='#' id='dropdown01' data-bs-toggle='dropdown' aria-expanded='false'>Tuotteet</a>
                   <ul className='dropdown-menu' aria-labelledby='dropdown01'>
-                    {categories.map(category => (
+                    {categories?.map(category => (
                       <li>
                         <Link>
                           {category.name}
