@@ -1,43 +1,71 @@
 import './App.css';
-import { Route, Switch } from "react-router";
-import About from "./components/About";
-import Footer from "./components/Footer";
-import Home from "./components/Home";
-import NavBar from "./components/NavBar";
-import NotFound from "./components/NotFound";
-import Contact from "./components/Contact";
-import Header from './components/Header';
-import ShoppingCart from './components/ShoppingCart';
-import Ale from './components/Ale';
-import Sisustus from './components/Sisustus';
-import Valaisimet from './components/Valaisimet';
-import Huonekalut from './components/Huonekalut';
-import KaikkiTuotteet from './components/KaikkiTuotteet';
-import Faqs from './components/Faqs';
+import { Route, Switch, useLocation } from "react-router";
+import { useEffect, useState} from 'react';
+import Footer from "./inc/Footer";
+import Home from "./Home";
+import NavBar from "./inc/NavBar";
+import Header from './inc/Header';
+import Product from './Product';
 
+
+const URL = "http://localhost/webshop/";
 
 function App() {
+  const [category, setCategory] = useState(null);
+  const [product, setProduct] = useState(null);
+  const [cart, setCart]= useState([]);
+
+  let location = useLocation();
+
+  useEffect(() => {
+    if ('cart' in localStorage) {
+      setCart(JSON.parse(localStorage.getItem('cart')));
+    }
+  },[])
+
+  useEffect(() => {
+    if (location.state !== undefined) {
+      if (location.pathname ==="/") {
+        setCategory({id: location.state.id, name:location.state.name});
+      } else if (location.pathname === "/product") {
+        setProduct({id: location.state.id, name:location.state.name});
+      }
+    }
+  },[location.state])
+
+  function addToCart(product) {
+    const newCart = [...cart,product];
+    setCart(newCart);
+    localStorage.setItem('cart',JSON.stringify(cart));
+  }
+
   return (
     <>
     <Header />
-    <NavBar />
-    <div className='container-fluid' id='pageBg'>
-      <Switch>
-        <Route path="/navbar" component={NavBar} />
-        <Route path="/" component={Home} exact />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/footer" component={Footer} />
-        <Route path="/shoppingcart" component={ShoppingCart} />
-        <Route path="/ale" component={Ale} />
-        <Route path="/huonekalut" component={Huonekalut} />
-        <Route path="/valaisimet" component={Valaisimet} />
-        <Route path="/sisustus" component={Sisustus} />
-        <Route path="/kaikkituotteet" component={KaikkiTuotteet} />
-        <Route path="/faqs" component={Faqs} />
-        <Route component={NotFound} />
-      </Switch>
-    </div>
+    <NavBar url={URL} setCategory={setCategory} cart={cart}/>
+      <div id='content' className='container-fluid'>
+        <Switch>
+          <Route 
+            path="/" render ={() =>
+              <Home 
+              url={URL}
+              category={category}
+              addToCart={addToCart}
+            />}
+            exact
+          />
+          <Route 
+            path='/product'
+            render={() =>
+              <Product
+                url={URL}
+                product={product}
+                addToCart={addToCart}
+              />
+            }
+          />
+        </Switch>
+      </div>
     <Footer />
     </>
   );

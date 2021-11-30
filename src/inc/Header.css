@@ -1,0 +1,7 @@
+#banneri {
+  background-image: url(./boho4.jpg);
+  width: 100%;
+  height: 550px;
+  background-size: cover;
+  margin:0;
+}

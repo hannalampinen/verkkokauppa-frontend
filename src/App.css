@@ -11,13 +11,13 @@ color: #2c2b29; tumma harmaa/musta
   background-color: #eed9c4;
 }
 
-#image1 {
-  background-image: url(./boho4.jpg);
+#banneri {
+  background-image: url(./images/bohemio-banneri.png);
   width: 100%;
-  height: 550px;
+  height: 150px;
   background-size: cover;
   margin:0;
-}
+} 
 
 h3 {
   text-align: center;
