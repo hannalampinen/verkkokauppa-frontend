@@ -5,7 +5,7 @@ export default function Product({url, product, addToCart}) {
         <div style={{'padding-top' : '50px'}}>
             <h4>{product?.name}</h4>
             {/* <img src={url + 'images/' + product.image} alt={product.name} id='kuvakoko'/> */}
-            {product?.price}
+            {product?.price} €
             <button class='btn btn-primary' type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
                 <div>
                     {/* {product.description} */}

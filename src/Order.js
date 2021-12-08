@@ -64,17 +64,6 @@ export default function Order({cart,updateAmount,removeFromCart}) {
                   <label for="inputZip">Postinumero</label>
                   <input type="text" class="form-control" id="inputZip" />
                 </div>
-                <div class="form-row">
-                <div class="col-7">
-                  <input type="text" class="form-control" placeholder="City" />
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="State" />
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Zip" />
-                </div>
-              </div>
                 <div class="form-group col-md-4">
                   <label for="inputState">Toimitus</label>
                   <select id="inputState" class="form-control">
@@ -87,7 +76,7 @@ export default function Order({cart,updateAmount,removeFromCart}) {
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="gridCheck" />
                   <label class="form-check-label" for="gridCheck">
-                    Hyväksyn jotain paskaa
+                    Hyväksyn jotain 
                   </label>
                 </div>
               </div>
