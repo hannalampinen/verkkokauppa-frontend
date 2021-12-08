@@ -1,0 +1,18 @@
+td {
+    width: 200px;
+    padding: 5px;
+}
+
+#tuotekpl {
+    max-width: 50px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+#lomake {
+    margin: 100px;
+}
+
+#lomakerivit {
+    margin: 10px;
+}

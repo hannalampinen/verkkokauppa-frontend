@@ -50,4 +50,30 @@ footer {
   color: #161b1a;
 }
 
+button.add {
+  background-color: #40c0f0;
+  width: 1.5rem;
+  margin: 1em;
+}
+
+button.remove {
+  background-color: #f04040;
+  width: 1.5rem;
+  margin: 1em;
+}
+
+button.badge {
+  background-color: #f04040;
+  border: none;
+  color: white;
+  width: 1.5rem;
+}
+
+.text-right {
+  text-align: right;
+}
+
+#kuvakoko {
+  max-width: 25%;
+}
 

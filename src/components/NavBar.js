@@ -3,7 +3,6 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import Cart from './Cart';
 
- // miten saa const url toimimaan???
 
 export default function NavBar({url,setCategory,cart}) {
   const [categories, setCategories] = useState([]);
@@ -34,16 +33,19 @@ export default function NavBar({url,setCategory,cart}) {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className='nav-item'>
-                  <a className='nav-link' aria-current='page' to='/'>Etusivu</a> 
+                  <Link className='nav-link' to='/'>Etusivu</Link>
                 </li>
                 <li className='nav-item dropdown'>
                   <a className='nav-link dropdown-toggle' href='#' id='dropdown01' data-bs-toggle='dropdown' aria-expanded='false'>Tuotteet</a>
                   <ul className='dropdown-menu' aria-labelledby='dropdown01'>
+                    {/* <li>
+                      <Link>Kaikki tuotteet</Link>
+                    </li> */}
                     {categories?.map(category => (
                       <li key={category.id}>
                         <Link className="dropdown-item"
                           to={{
-                            pathname: '/',
+                            pathname: '/products',
                             state: {
                               id: category.id,
                               name: category.name

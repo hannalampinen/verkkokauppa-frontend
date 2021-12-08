@@ -1,12 +1,13 @@
 import './App.css';
 import { Route, Switch, useLocation } from "react-router";
 import { useEffect, useState} from 'react';
-import Footer from "./inc/Footer";
-import Home from "./Home";
-import NavBar from "./inc/NavBar";
-import Header from './inc/Header';
+import Footer from "./components/Footer";
+import Home from "./Home"; 
+import NavBar from "./components/NavBar";
+import Header from './components/Header';
 import Product from './Product';
-
+import Order from './Order';
+import Products from './Products';
 
 const URL = "http://localhost/webshop/";
 
@@ -25,18 +26,38 @@ function App() {
 
   useEffect(() => {
     if (location.state !== undefined) {
-      if (location.pathname ==="/") {
+      if (location.pathname ==="/products") {
         setCategory({id: location.state.id, name:location.state.name});
       } else if (location.pathname === "/product") {
-        setProduct({id: location.state.id, name:location.state.name});
+        setProduct({id: location.state.id, name:location.state.name, price: location.state.price});
       }
     }
   },[location.state])
 
   function addToCart(product) {
-    const newCart = [...cart,product];
-    setCart(newCart);
-    localStorage.setItem('cart',JSON.stringify(cart));
+    if (cart.some(item => item.id === product.id)) {
+      const existingProduct = cart.filter(item => item.id === product.id);
+      updateAmount(parseInt(existingProduct[0].amount) + 1, product);
+    } else {
+      product ["amount"] = 1;
+      const newCart = [...cart,product];
+      setCart(newCart);
+      localStorage.setItem('cart',JSON.stringify(cart));
+    }
+  }
+
+  function updateAmount(amount, product) {
+    product.amount = amount;
+    const index = cart.findIndex((item => item.id === product.id));
+    const modifiedCart = Object.assign([...cart], {[index]:product});
+    setCart(modifiedCart);
+    localStorage.setItem('cart', JSON.stringify(modifiedCart));
+  }
+
+  function removeFromCart(product) {
+    const itemsWithoutRemoved = cart.filter(item => item.id !== product.id);
+    setCart(itemsWithoutRemoved);
+    localStorage.setItem('cart', JSON.stringify(itemsWithoutRemoved));
   }
 
   return (
@@ -45,14 +66,15 @@ function App() {
     <NavBar url={URL} setCategory={setCategory} cart={cart}/>
       <div id='content' className='container-fluid'>
         <Switch>
+          <Route path='/' component={Home} exact/>
           <Route 
-            path="/" render ={() =>
-              <Home 
+            path="/products" render ={() =>
+              <Products 
               url={URL}
               category={category}
               addToCart={addToCart}
             />}
-            exact
+            /* exact */
           />
           <Route 
             path='/product'
@@ -63,6 +85,14 @@ function App() {
                 addToCart={addToCart}
               />
             }
+          />
+          <Route path="/order" render={() =>
+            <Order 
+              cart={cart}
+              updateAmount={updateAmount}
+              removeFromCart={removeFromCart}
+            />
+          } 
           />
         </Switch>
       </div>
