@@ -91,6 +91,7 @@ function App() {
               cart={cart}
               updateAmount={updateAmount}
               removeFromCart={removeFromCart}
+              url={URL} //tämän rivin tekstin lisäsin kuten jounilla.
             />
           } 
           />
