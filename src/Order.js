@@ -2,7 +2,8 @@ import React,{useState} from 'react';
 import uuid from 'react-uuid';
 import './Order.css';
 
-export default function Order({cart,updateAmount,removeFromCart,url}){
+export default function Order({cart,updateAmount,removeFromCart,empty,url}){
+
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
   const [address, setAddress] = useState('');
@@ -16,7 +17,7 @@ export default function Order({cart,updateAmount,removeFromCart,url}){
 
   function order(e) {
     e.preventDefault();
-    fetch(url + 'order/add.php',{
+    fetch(url + 'order/add.php', {
       method: 'POST',
       header: {
         'Accept': 'application/json',
@@ -36,7 +37,7 @@ export default function Order({cart,updateAmount,removeFromCart,url}){
     })
     .then (
       (res) => {
-      //  empty();
+      empty();
         setFinished(true);
       },(error) => {
         alert(error);
@@ -49,19 +50,16 @@ export default function Order({cart,updateAmount,removeFromCart,url}){
   if (finished === false) {
     return (
       <div>
-        <h3 className="header">Ostoskorin sisältö</h3>
+        <h3 className="header">Ostoskori</h3>
         <table className="table">
           <tbody>
-            
             {cart.map(product => {
               sum+=parseFloat(product.price);
               return (
                 <tr key={uuid()}>
                   <td>{product.name}</td>
-                  <td>{product.price} €</td>
+                  <td>{product.price}€</td>
                   <td>
-                    {/* <button className='add' onClick={e => changeAmount(e,product)} value={product.amount}> 
-                    +</button> */}
                      Kpl
                     <input 
                        id='tuotekpl'
@@ -70,21 +68,18 @@ export default function Order({cart,updateAmount,removeFromCart,url}){
                        onChange={e => changeAmount(e,product)}
                        value={product.amount}
                      /> 
-                     {/* <button className='remove' onClick={e => changeAmount(e,product)} value={product.amount}> 
-                     -</button> */}
                    </td>
-                  <td>{product.amount} x {product.price} €</td>
+                  <td>{product.amount} x {product.price}€</td>
                    <td><a href='#' onClick={() => removeFromCart(product)}>Poista tuote</a></td>
                  </tr>
               )
             })}
             <tr key={uuid()}>
-
             <td className="sumrow">Yhteensä:</td>
-            <td className="sumrow">{sum.toFixed(2)} €</td>
-            {/* <td className="sumrow"><a href="#" onClick={e => empty()}>Empty</a></td> */}
+            <td className="sumrow">{sum.toFixed(2)}€</td>
+            <td className="sumrow"><a href="#" onClick={e => empty()}>Tyhjennä ostoskori</a></td> 
             </tr>
-        </tbody>
+          </tbody>
         </table>
         {cart.length > 0 && //render order form, if there is something in cart.
         <>
@@ -111,7 +106,7 @@ export default function Order({cart,updateAmount,removeFromCart,url}){
             <input className="form-control" onChange={e => setCity(e.target.value)}/>
           </div>
           <div className="buttons">
-            <button className="btn btn-primary">Tilaa</button>
+            <button className="btn btn-primary" type='button' onClick={e => order(e)}>Tilaa</button>
           </div>
         </form>
         </>

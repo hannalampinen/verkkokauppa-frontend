@@ -9,6 +9,7 @@ import Product from './Product';
 import Order from './Order';
 import Products from './Products';
 
+
 const URL = "http://localhost/webshop/";
 
 function App() {
@@ -60,6 +61,11 @@ function App() {
     localStorage.setItem('cart', JSON.stringify(itemsWithoutRemoved));
   }
 
+  function emptyCart() {
+    setCart([]);
+    localStorage.removeItem('cart');
+  }
+
   return (
     <>
     <Header />
@@ -91,7 +97,8 @@ function App() {
               cart={cart}
               updateAmount={updateAmount}
               removeFromCart={removeFromCart}
-              url={URL} //tämän rivin tekstin lisäsin kuten jounilla.
+              empty={emptyCart}
+              url={URL} 
             />
           } 
           />
