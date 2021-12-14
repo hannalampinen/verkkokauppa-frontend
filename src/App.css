@@ -14,9 +14,12 @@ color: #2c2b29; tumma harmaa/musta
 #banneri {
   background-image: url(./images/bohemio-banneri.png);
   width: 100%;
-  height: 150px;
-  background-size: cover;
+  height: 200px;
+  background-size: center;
+  background-position: fixed;
   margin:0;
+
+  display: block;
 } 
 
 h3 {
@@ -43,7 +46,7 @@ footer {
 }
 
 .nav-link:hover {
-  background-color: #faf0e6;
+  background-color: #D8CAC5;
 }
 
 .nav-link:visited {
@@ -76,4 +79,5 @@ button.badge {
 #kuvakoko {
   max-width: 25%;
 }
+
 

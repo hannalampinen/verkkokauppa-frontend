@@ -34,7 +34,9 @@ export default function Products({url, category, addToCart}) {
                     <Link
                         to={{
                             pathname: '/product',
-                            state: {
+                            state: { 
+                            picture: product.image,
+                            description: product.description,
                             id: product.id,
                             name: product.name,
                             price: product.price

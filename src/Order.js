@@ -105,8 +105,8 @@ export default function Order({cart,updateAmount,removeFromCart,empty,url}){
             <label>Kaupunki:</label>
             <input className="form-control" onChange={e => setCity(e.target.value)}/>
           </div>
-          <div className="buttons">
-            <button className="btn btn-primary" type='button' onClick={e => order(e)}>Tilaa</button>
+          <div className="buttons" style={{'padding': '30px'}}>
+            <button className="btn" style={{'background-color': '#D8CAC5', 'color':'#ffffff'}} type='button' onClick={e => order(e)}>Tilaa</button>
           </div>
         </form>
         </>
