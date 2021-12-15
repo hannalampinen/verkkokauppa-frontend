@@ -8,6 +8,9 @@ import Header from './components/Header';
 import Product from './Product';
 import Order from './Order';
 import Products from './Products';
+import ContactUs from './ContactUs';
+import Faq from './Faq';
+import About from './About';
 
 
 const URL = "http://localhost/webshop/";
@@ -103,6 +106,9 @@ function App() {
             />
           } 
           />
+          <Route path="/contactus" component={ContactUs}/>
+          <Route path="/about" component={About}/>
+          <Route path="/faq" component={Faq}/>
         </Switch>
       </div>
     <Footer />
