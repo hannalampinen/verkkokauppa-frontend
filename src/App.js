@@ -30,7 +30,8 @@ function App() {
       if (location.pathname ==="/products") {
         setCategory({id: location.state.id, name:location.state.name});
       } else if (location.pathname === "/product") {
-        setProduct({id: location.state.id, name:location.state.name, price: location.state.price});
+        console.log(location.state);
+        setProduct({id: location.state.id, name:location.state.name, price: location.state.price, description: location.state.description, picture: location.state.picture}); //kaksi vikaa lisättiin jounin kanssa.
       }
     }
   },[location.state])

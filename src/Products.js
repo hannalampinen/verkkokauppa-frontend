@@ -16,6 +16,7 @@ export default function Products({url, category, addToCart}) {
             .then((response) => {
                 const json = response.data;
                 setProducts(json);
+                console.log(json);
             }).catch(error => {
                 if (error.response === undefined) {
                     alert(error);
@@ -36,7 +37,7 @@ export default function Products({url, category, addToCart}) {
                             pathname: '/product',
                             state: { 
                             picture: product.image,
-                            description: product.description,
+                            description: product.DESCRIPTION, //DESCRIPTION on isolla tietokannassa, siksi ei toiminut.
                             id: product.id,
                             name: product.name,
                             price: product.price
