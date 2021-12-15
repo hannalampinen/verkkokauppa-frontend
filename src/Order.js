@@ -54,7 +54,7 @@ export default function Order({cart,updateAmount,removeFromCart,empty,url}){
         <table className="table">
           <tbody>
             {cart.map(product => {
-              sum+=parseFloat(product.price);
+              sum+=parseFloat(product.price) * parseInt(product.amount);
               return (
                 <tr key={uuid()}>
                   <td>{product.name}</td>
@@ -84,7 +84,7 @@ export default function Order({cart,updateAmount,removeFromCart,empty,url}){
         {cart.length > 0 && //render order form, if there is something in cart.
         <>
         <h3 className="header">Asiakkaan tiedot</h3>
-        <form onSubmit={order}>
+        <form className='p-4' onSubmit={order}>
           <div className="form-group">
             <label>Etunimi:</label>
             <input className="form-control" onChange={e => setFirstname(e.target.value)}/>
