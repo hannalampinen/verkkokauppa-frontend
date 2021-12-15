@@ -37,7 +37,7 @@ export default function Products({url, category, addToCart}) {
                             pathname: '/product',
                             state: { 
                             picture: product.image,
-                            description: product.DESCRIPTION, //DESCRIPTION on isolla tietokannassa, siksi ei toiminut.
+                            description: product.description, //DESCRIPTION on isolla tietokannassa, siksi ei toiminut. Tai pienellä:D
                             id: product.id,
                             name: product.name,
                             price: product.price
