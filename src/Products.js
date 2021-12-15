@@ -29,9 +29,12 @@ export default function Products({url, category, addToCart}) {
 
     return (
         <div style={{'padding-top':'60px'}}>
+            
             <h3>{category?.name}</h3>
+            <section class="row">
+
             {products.map(product => (
-                <div key={product.id}> 
+                <div class="col-md-4 p-2" key={product.id}> 
                     <Link
                         to={{
                             pathname: '/product',
@@ -43,16 +46,24 @@ export default function Products({url, category, addToCart}) {
                             price: product.price
                             }
                         }}>
+                        
                             <img src={url + 'images/' + product.image} alt={product.name} id='kuvakoko'/>
                             <div>
                                 {product.name}
-                            </div>
+                                </div>
+                           
                     </Link>
+                    
                     {product.price}€
+                    <div style={{'padding': '20px'}}>
+                    <button class='btn' style={{'background-color': '#D8CAC5', 'color':'#ffffff'}} type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
+                    </div>
+                
                     {/* <button class='btn btn-primary' type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button> */}
 
                 </div>
             ))}
+            </section>
         </div>
     )
 }
