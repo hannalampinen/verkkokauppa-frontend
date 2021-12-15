@@ -34,13 +34,13 @@ export default function Products({url, category, addToCart}) {
             <section class="row">
 
             {products.map(product => (
-                <div class="col-md-4 p-2" key={product.id}> 
+                <div class="col-sm-6 col-md-4 p-2" key={product.id}> 
                     <Link
                         to={{
                             pathname: '/product',
                             state: { 
                             picture: product.image,
-                            description: product.description, //DESCRIPTION on isolla tietokannassa, siksi ei toiminut. Tai pienellä:D
+                            description: product.DESCRIPTION, //DESCRIPTION on isolla tietokannassa, siksi ei toiminut. Tai pienellä:D
                             id: product.id,
                             name: product.name,
                             price: product.price
@@ -48,14 +48,15 @@ export default function Products({url, category, addToCart}) {
                         }}>
                         
                             <img src={url + 'images/' + product.image} alt={product.name} id='kuvakoko'/>
-                            <div>
+                            <div id="moro" style={{'color': '#312416'}}>
                                 {product.name}
                                 </div>
                            
                     </Link>
-                    
+                    <div id="hellurei">
                     {product.price}€
-                    <div style={{'padding': '20px'}}>
+                    </div>
+                    <div style={{'padding-left': '20px','padding-top': '8px'}}>
                     <button class='btn' style={{'background-color': '#D8CAC5', 'color':'#ffffff'}} type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
                     </div>
                 

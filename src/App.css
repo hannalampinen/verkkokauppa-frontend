@@ -5,6 +5,9 @@ color: #eed9c4;	kylmä beige
 color: #e4d5b7;	vihertävä
 color: #d9b99b; tummempi beige
 color: #2c2b29; tumma harmaa/musta 
+
+#d8cac5 nude vaaleanpun beige, logon taustaväri.
+#312416 tummanruskea tekstiväri
 */
 
 #navigaatio {
@@ -54,7 +57,7 @@ footer {
 }
 
 button.add {
-  background-color: #40c0f0;
+  background-color: black;
   width: 1.5rem;
   margin: 1em;
 }
@@ -75,14 +78,30 @@ button.badge {
 .text-right {
   text-align: right;
 }
-
+/*products-osiossa kuvien määrittely*/
 #kuvakoko {
   width: 100%;
   padding: 20px;
 }
-
+/*yhden tuotteen avatessa,kuvan määrittely*/
 #kuvakoko2 {
   width: 100%;
+}
+
+/*products sivun kuvien nimien asettelu*/
+#moro {
+
+  padding-left: 25px;
+  text-decoration: underline #312416;
+}
+
+#moro:hover {
+  
+  font-weight: 600;
+}
+/*products sivun kuvien hinnan asettelu samaan linjaan nimien kanssa*/
+#hellurei {
+  padding-left: 25px;
 }
 
 
