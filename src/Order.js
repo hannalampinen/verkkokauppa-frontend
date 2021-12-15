@@ -63,21 +63,21 @@ export default function Order({cart,updateAmount,removeFromCart,empty,url}){
                      Kpl
                     <input 
                        id='tuotekpl'
-                       type='number' 
+                       type='number'
                        step="1"
                        onChange={e => changeAmount(e,product)}
                        value={product.amount}
                      /> 
                    </td>
                   <td>{product.amount} x {product.price}€</td>
-                   <td><a href='#' onClick={() => removeFromCart(product)}>Poista tuote</a></td>
+                   <td><a style={{'color': '#312416'}} href='#' onClick={() => removeFromCart(product)}>Poista tuote</a></td>
                  </tr>
               )
             })}
             <tr key={uuid()}>
-            <td className="sumrow">Yhteensä:</td>
+            <td style={{'color': '#312416'}} className="sumrow">Yhteensä:</td>
             <td className="sumrow">{sum.toFixed(2)}€</td>
-            <td className="sumrow"><a href="#" onClick={e => empty()}>Tyhjennä ostoskori</a></td> 
+            <td className="sumrow"><a style={{'color': '#312416'}} href="#" onClick={e => empty()}>Tyhjennä ostoskori</a></td> 
             </tr>
           </tbody>
         </table>
@@ -105,8 +105,8 @@ export default function Order({cart,updateAmount,removeFromCart,empty,url}){
             <label>Kaupunki:</label>
             <input className="form-control" onChange={e => setCity(e.target.value)}/>
           </div>
-          <div className="buttons" style={{'padding': '30px'}}>
-            <button className="btn" style={{'background-color': '#D8CAC5', 'color':'#ffffff'}} type='button' onClick={e => order(e)}>Tilaa</button>
+          <div className="buttons" style={{'padding': '30px', 'textAlign': 'center'}}>
+            <button className="btn" style={{'background-color': '#D8CAC5', 'color':'#ffffff', 'width': '50%'}} type='button' onClick={e => order(e)}>Lähetä tilaus</button>
           </div>
         </form>
         </>

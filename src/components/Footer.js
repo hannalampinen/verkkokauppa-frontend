@@ -10,7 +10,7 @@ export default function Footer() {
                     <li className="nav-item"><Link className='nav-link' to='/about'>Meistä</Link></li>
                     <li className="nav-item"><Link className='nav-link' to='/contactUs'>Ota yhteyttä</Link></li>
                 </ul>
-                <p className="text-center text-muted">&copy; 2021 Bohemio</p>
+                <p  id='fuutteri' className="text-center text-muted">&copy; 2021 Bohemio</p>
             </footer>
         </div>
     )
