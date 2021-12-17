@@ -64,7 +64,11 @@ export default function Products({url, category, addToCart}) {
 
                 </div>
             ))}
+
             </section>
         </div>
+
+        
     )
+    
 }

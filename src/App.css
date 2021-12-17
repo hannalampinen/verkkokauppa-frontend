@@ -8,6 +8,10 @@ color: #2c2b29; tumma harmaa/musta
 
 #d8cac5 nude vaaleanpun beige, logon taustaväri.
 #312416 tummanruskea tekstiväri
+
+
+
+   background-image: url(./images/bohemio-banneri.png);
 */
 
 #navigaatio {
@@ -16,14 +20,18 @@ color: #2c2b29; tumma harmaa/musta
 
 #banneri {
   background-image: url(./images/bohemio-banneri.png);
-  width: 100%;
-  height: 200px;
-  background-size: center;
-  background-position: fixed;
-  margin:0;
+ 
+ height: 200px;
+ width: 100%;
+ background-size: center;
+ background-position: fixed;
+ margin:0;
 
-  display: block;
+ display: block;
+
+ 
 } 
+
 
 h3 {
   text-align: center;
@@ -112,4 +120,22 @@ button.badge {
 .form-group {
   padding-left: 50px;
   padding-right: 50px;
+}
+
+/*up button juttuja*/
+
+.goTopHidden {
+  display: none;
+}
+
+.goTop {
+  display: block;
+
+}
+
+.goTop__text {
+  position: fixed;
+  height: 30px;
+  width: 30px;
+  text-align: center;
 }
