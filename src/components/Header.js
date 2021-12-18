@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Header() {
     return (
-        <div id='banneritausta'>
+        <div>
             <h2 id='otsikko'>BOHEMIO</h2>
         </div>
     )

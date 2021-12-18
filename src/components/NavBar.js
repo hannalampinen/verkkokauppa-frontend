@@ -57,7 +57,7 @@ export default function NavBar({url,setCategory,cart}) {
                 </li>
               </ul>
               <ul className='navbar-nav ml-auto' style={{'margin-right':'1em'}}>
-                  <li className='nav-item cart' >
+                  <li className='nav-item'>
                     <Cart cart={cart}/>
                   </li>
               </ul>

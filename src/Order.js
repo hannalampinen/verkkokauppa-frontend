@@ -67,28 +67,28 @@ export default function Order({cart,updateAmount,removeFromCart,empty,url}){
                      Kpl
                     <input 
                        id='tuotekpl'
-                       type='number' 
+                       type='number'
                        step="1"
                        onChange={e => changeAmount(e,product)}
                        value={product.amount}
                      /> 
                    </td>
                   <td>{product.amount} x {product.price}€</td>
-                   <td><a href='#' onClick={() => removeFromCart(product)}>Poista tuote</a></td>
+                   <td><a id='ostoskori' style={{'color': '#312416'}} href='#' onClick={() => removeFromCart(product)}>Poista tuote</a></td>
                  </tr>
               )
             })}
             <tr key={uuid()}>
-            <td className="sumrow">Yhteensä:</td>
+            <td style={{'color': '#312416'}} className="sumrow">Yhteensä:</td>
             <td className="sumrow">{sum.toFixed(2)}€</td>
-            <td className="sumrow"><a href="#" onClick={e => empty()}>Tyhjennä ostoskori</a></td> 
+            <td className="sumrow"><a id='ostoskori' style={{'color': '#312416'}} href="#" onClick={e => empty()}>Tyhjennä ostoskori</a></td> 
             </tr>
           </tbody>
         </table>
         {cart.length > 0 && //render order form, if there is something in cart.
         <>
         <h3 className="header">Asiakkaan tiedot</h3>
-        <form onSubmit={order}>
+        <form className='p-4' onSubmit={order}>
           <div className="form-group">
             <label>Etunimi:</label>
             <input className="form-control" onChange={e => setFirstname(e.target.value)}/>

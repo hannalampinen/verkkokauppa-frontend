@@ -39,14 +39,17 @@ body {
 
 /* #banneri {
   background-image: url(./images/bohemio-banneri.png);
-  width: 100%;
-  height: 200px;
-  background-size: center;
-  background-position: fixed;
-  margin:0;
+ 
+ height: 200px;
+ width: 100%;
+ background-size: center;
+ background-position: fixed;
+ margin:0;
 
-  display: block;
+ display: block;
+
 }  */
+
 
 h3 {
   text-align: center;
@@ -58,9 +61,11 @@ h2 {
   font-family: 'Sen', sans-serif;
 }
 
-#text {
+/* #text {
   margin: 50px;
-}
+} */
+
+
 
 footer .container {
   margin-top: 0;
@@ -72,35 +77,41 @@ footer {
   text-align: center;
 }
 
+/* .footerlinkki:hover {
+  color: #000;
+  background-color: #faf0e6;
+} */
+
+/* Navbarin linkkien tyylejä*/
 .nav-link {
-  color: #0b0c0c;
+  color: #070707;
 }
 
 .nav-link:hover {
   background-color: #faf0e6;
 }
 
-/* .nav-link:visited {
-  color: #161b1a;
-} */
-
-.text-right {
-  text-align: right;
+.nav-link:visited {
+  color: #0b0c0c;
 }
 
+
+/*products-osiossa kuvien määrittely*/
 #kuvakoko {
   width: 100%;
   padding: 20px;
 }
-
+/*yhden tuotteen avatessa,kuvan määrittely*/
 #kuvakoko2 {
   width: 100%;
 }
 
+/* Tuotteiden nimien keskitys products.js sivulla*/
 #tuotteet {
   text-align: center;
 }
 
+/* Tuotteiden nimien linkit products.js sivulla*/
 a {
   color: #0a0a0a;
   text-decoration: none;
@@ -109,6 +120,7 @@ a:hover {
   color: #d9b99b;
 }
 
-.cart.a:hover {
-  color: pink;
+/*Tyhjennä ostoskori/poista tuote nappien tyylit */
+#ostoskori:hover {
+  text-decoration: underline;
 }
