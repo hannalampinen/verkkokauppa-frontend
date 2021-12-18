@@ -25,7 +25,7 @@ export default function NavBar({url,setCategory,cart}) {
 
     return (
       <>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+       <nav id='navigaatio' className="navbar navbar-expand-lg navbar-light">
           <div className="container-fluid">
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
@@ -38,9 +38,6 @@ export default function NavBar({url,setCategory,cart}) {
                 <li className='nav-item dropdown'>
                   <a className='nav-link dropdown-toggle' href='#' id='dropdown01' data-bs-toggle='dropdown' aria-expanded='false'>Tuotteet</a>
                   <ul className='dropdown-menu' aria-labelledby='dropdown01'>
-                    {/* <li>
-                      <Link>Kaikki tuotteet</Link>
-                    </li> */}
                     {categories?.map(category => (
                       <li key={category.id}>
                         <Link className="dropdown-item"
@@ -60,14 +57,13 @@ export default function NavBar({url,setCategory,cart}) {
                 </li>
               </ul>
               <ul className='navbar-nav ml-auto' style={{'margin-right':'1em'}}>
-                  <li className='nav-item'>
+                  <li className='nav-item cart' >
                     <Cart cart={cart}/>
                   </li>
               </ul>
             </div>
           </div>
-        </nav>
-        
+        </nav> 
       </>
     )
 }

@@ -5,13 +5,39 @@ color: #eed9c4;	kylmä beige
 color: #e4d5b7;	vihertävä
 color: #d9b99b; tummempi beige
 color: #2c2b29; tumma harmaa/musta 
+
+tumma harmaa: #292828;
 */
 
-#navigaatio {
-  background-color: #eed9c4;
+/* FONTIT:
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Sen', sans-serif;
+*/
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f8f9fa;
+} 
+
+/* #banneritausta {
+  background-color: chartreuse;
+} */
+
+#otsikko {
+  color: #fff;
+  background-color: #292828;
+  text-align: center;
+  /* margin-top: 20px; */
+  padding: 30px;
 }
 
-#banneri {
+#navigaatio {
+  background-color: #D8CAC5;
+  margin-bottom: 0.5em;
+}
+
+/* #banneri {
   background-image: url(./images/bohemio-banneri.png);
   width: 100%;
   height: 200px;
@@ -20,11 +46,16 @@ color: #2c2b29; tumma harmaa/musta
   margin:0;
 
   display: block;
-} 
+}  */
 
 h3 {
   text-align: center;
   margin: 40px;
+  font-family: 'Sen', sans-serif;
+}
+
+h2 {
+  font-family: 'Sen', sans-serif;
 }
 
 #text {
@@ -42,35 +73,16 @@ footer {
 }
 
 .nav-link {
-  color: #161b1a;
+  color: #0b0c0c;
 }
 
 .nav-link:hover {
-  background-color: #D8CAC5;
+  background-color: #faf0e6;
 }
 
-.nav-link:visited {
+/* .nav-link:visited {
   color: #161b1a;
-}
-
-button.add {
-  background-color: #40c0f0;
-  width: 1.5rem;
-  margin: 1em;
-}
-
-button.remove {
-  background-color: #f04040;
-  width: 1.5rem;
-  margin: 1em;
-}
-
-button.badge {
-  background-color: #f04040;
-  border: none;
-  color: white;
-  width: 1.5rem;
-}
+} */
 
 .text-right {
   text-align: right;
@@ -85,4 +97,18 @@ button.badge {
   width: 100%;
 }
 
+#tuotteet {
+  text-align: center;
+}
 
+a {
+  color: #0a0a0a;
+  text-decoration: none;
+}
+a:hover {
+  color: #d9b99b;
+}
+
+.cart.a:hover {
+  color: pink;
+}

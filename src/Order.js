@@ -9,6 +9,8 @@ export default function Order({cart,updateAmount,removeFromCart,empty,url}){
   const [address, setAddress] = useState('');
   const [zip, setZip] = useState('');
   const [city, setCity] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
   const [finished, setFinished] = useState(false);
 
   function changeAmount(e,product) {
@@ -29,6 +31,8 @@ export default function Order({cart,updateAmount,removeFromCart,empty,url}){
         address: address,
         zip: zip,
         city: city,
+        phone: phone,
+        email: email,
         cart: cart,
       })
     })
@@ -54,7 +58,7 @@ export default function Order({cart,updateAmount,removeFromCart,empty,url}){
         <table className="table">
           <tbody>
             {cart.map(product => {
-              sum+=parseFloat(product.price);
+              sum+=parseFloat(product.price) * parseInt(product.amount);
               return (
                 <tr key={uuid()}>
                   <td>{product.name}</td>
@@ -104,6 +108,14 @@ export default function Order({cart,updateAmount,removeFromCart,empty,url}){
           <div className="form-group">
             <label>Kaupunki:</label>
             <input className="form-control" onChange={e => setCity(e.target.value)}/>
+          </div>
+          <div className="form-group">
+            <label>Puhelinnumero:</label>
+            <input className="form-control" onChange={e => setPhone(e.target.value)}/>
+          </div>
+          <div className="form-group">
+            <label>Sähköposti:</label>
+            <input className="form-control" onChange={e => setEmail(e.target.value)}/>
           </div>
           <div className="buttons" style={{'padding': '30px'}}>
             <button className="btn" style={{'background-color': '#D8CAC5', 'color':'#ffffff'}} type='button' onClick={e => order(e)}>Tilaa</button>
