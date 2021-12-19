@@ -7,10 +7,10 @@ export default function Product({url, product, addToCart}) {
   return (
     <div style={{'padding' : '40px'}}>
       <section class="row">
-        <div class="col-4">
+        <div class="col-12 col-md-4">
           {<img src={url + 'images/' + product?.picture} alt={product?.name} id='kuvakoko2'/>}
         </div>
-        <div class="col-4">
+        <div class="col-12 col-md-4">
           <h2>{product?.name}</h2>
           <div style={{'font-size':'20pt', 'padding-bottom': '40px'}}>
             {product?.price} €

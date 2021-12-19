@@ -13,6 +13,7 @@ import Faq from './Faq';
 import About from './About';
 
 
+
 const URL = "http://localhost/webshop/";
 
 function App() {
@@ -109,6 +110,7 @@ function App() {
           <Route path="/contactus" component={ContactUs}/>
           <Route path="/about" component={About}/>
           <Route path="/faq" component={Faq}/>
+
         </Switch>
       </div>
     <Footer />

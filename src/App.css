@@ -20,10 +20,7 @@ body {
   background-color: #f8f9fa;
 } 
 
-/* #banneritausta {
-  background-color: chartreuse;
-} */
-
+/* Bohemio-banneri*/
 #otsikko {
   color: #fff;
   background-color: #292828;
@@ -32,6 +29,7 @@ body {
   padding: 30px;
 }
 
+/* Navigaatiopalkin tyyli */
 #navigaatio {
   background-color: #D8CAC5;
   margin-bottom: 0.5em;
@@ -61,12 +59,7 @@ h2 {
   font-family: 'Sen', sans-serif;
 }
 
-/* #text {
-  margin: 50px;
-} */
-
-
-
+/* Footerin tyylit */
 footer .container {
   margin-top: 0;
 }
@@ -76,11 +69,6 @@ footer {
   width: 100%;
   text-align: center;
 }
-
-/* .footerlinkki:hover {
-  color: #000;
-  background-color: #faf0e6;
-} */
 
 /* Navbarin linkkien tyylejä*/
 .nav-link {
@@ -94,7 +82,6 @@ footer {
 .nav-link:visited {
   color: #0b0c0c;
 }
-
 
 /*products-osiossa kuvien määrittely*/
 #kuvakoko {
@@ -123,4 +110,27 @@ a:hover {
 /*Tyhjennä ostoskori/poista tuote nappien tyylit */
 #ostoskori:hover {
   text-decoration: underline;
+}
+
+/* Ostoskorin leveys */
+#ordersivu {
+  width: 80%;
+}
+
+/* @media screen and (max-width: 1200px) {
+  .parallax {
+      background-attachment: scroll;
+  }
+  
+  .text {
+      padding: 30px 10px 30px 10px;
+      position: relative;
+  }     
+}  */
+
+#login {
+  padding-top:50px;
+  padding-bottom: 70px;
+  width: 30%;
+  margin: auto;
 }

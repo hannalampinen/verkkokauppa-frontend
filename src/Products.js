@@ -28,7 +28,7 @@ export default function Products({url, category, addToCart}) {
     },[category])
 
     return (
-        <div style={{'padding-top':'20px'}}>
+        <div style={{'padding-top':'15px'}}>
             
             <h3>{category?.name}</h3>
             <section class="row">
